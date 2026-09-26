@@ -27,7 +27,7 @@ function Register() {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/auth/register",
+        "https://collections-backend-qguh.onrender.com/auth/register",
         formData
       );
 

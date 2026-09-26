@@ -20,7 +20,7 @@ function Seepro() {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/products/getAll",
+          "https://collections-backend-qguh.onrender.com/products/getAll",
           {
             headers: {
               "Content-Type": "application/json",

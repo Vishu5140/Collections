@@ -17,7 +17,7 @@ function MyOrder() {
     const getOrder = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/order/Myorder/${id}`,
+          `https://collections-backend-qguh.onrender.com/order/Myorder/${id}`,
           {
             headers: {
               "Content-Type": "application/json",

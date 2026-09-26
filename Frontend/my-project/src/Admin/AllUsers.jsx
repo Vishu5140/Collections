@@ -14,7 +14,7 @@ function AllUsers() {
     const getUsers = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/auth/getAll",
+          "https://collections-backend-qguh.onrender.com/auth/getAll",
           {
             headers: {
               "Content-Type": "application/json",
@@ -40,7 +40,7 @@ function AllUsers() {
   const handleDelete = (id) => {
     axios
       .delete(
-        `http://localhost:5000/auth/deleteUser/${id}`,
+        `https://collections-backend-qguh.onrender.com/auth/deleteUser/${id}`,
         {
           headers: {
             "Content-Type": "application/json",

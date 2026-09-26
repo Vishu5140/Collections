@@ -16,7 +16,7 @@ function GetApro() {
     const getPro = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/products/getApro",
+          "https://collections-backend-qguh.onrender.com/products/getApro",
           {
             headers: {
               "Content-Type": "application/json",
@@ -47,7 +47,7 @@ function GetApro() {
   const handleDelete = (id) => {
     axios
       .delete(
-        `http://localhost:5000/products/deleteproduct/${id}`,
+        `https://collections-backend-qguh.onrender.com/products/deleteproduct/${id}`,
         {
           headers: {
             "Content-Type": "application/json",

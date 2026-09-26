@@ -26,7 +26,7 @@ function Login() {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/auth/login",
+        "https://collections-backend-qguh.onrender.com/auth/login",
         formData
       );
 

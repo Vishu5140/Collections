@@ -20,7 +20,7 @@ function AdminRegister() {
     e.preventDefault();
 
     console.log("Admin Registration:", formData);
-     axios.post('http://localhost:5000/auth/adminCreate',formData).then((res)=>{
+     axios.post('https://collections-backend-qguh.onrender.com/auth/adminCreate',formData).then((res)=>{
         console.log(res.data);
         navigate("/login");
      }).catch((error)=>{

@@ -49,7 +49,7 @@ function Home() {
   const handleDelete=()=>{
     const id=localStorage.getItem("userId");
     const token=localStorage.getItem("token");
-    axios.delete(`http://localhost:5000/auth/deleteUser/${id}`,{
+    axios.delete(`https://collections-backend-qguh.onrender.com/auth/deleteUser/${id}`,{
       headers:{
         "Content-Type":"application/json",
          authorization:`Bearer ${token}`,

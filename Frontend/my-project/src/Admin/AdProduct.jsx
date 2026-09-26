@@ -86,7 +86,7 @@ function Adproduct() {
       // ==============================
 
       const response = await axios.post(
-        "http://localhost:5000/products/adproduct",
+        "https://collections-backend-qguh.onrender.com/products/adproduct",
         {
           name: formData.name,
           description: formData.description,

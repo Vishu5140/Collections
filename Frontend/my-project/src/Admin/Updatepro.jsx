@@ -28,7 +28,7 @@ function Updatepro() {
     const getProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/products/getOne/${id}`,
+          `https://collections-backend-qguh.onrender.com/products/getOne/${id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -76,7 +76,7 @@ function Updatepro() {
       setUpdating(true);
 
       const response = await axios.put(
-        `http://localhost:5000/products/updateproduct/${id}`,
+        `https://collections-backend-qguh.onrender.com/products/updateproduct/${id}`,
         {
           name: formData.name,
           description: formData.description,

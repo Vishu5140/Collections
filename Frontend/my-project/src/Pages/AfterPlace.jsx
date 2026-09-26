@@ -13,7 +13,7 @@ function AfterPlace() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/order/getorders", {
+      .get("https://collections-backend-qguh.onrender.com/order/getorders", {
         headers: {
           "Content-Type": "application/json",
           authorization: `Bearer ${token}`,

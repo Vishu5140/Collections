@@ -12,7 +12,7 @@ function BeginDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/products/getOne/${id}`, {
+      .get(`https://collections-backend-qguh.onrender.com/products/getOne/${id}`, {
         headers: {
           "Content-Type": "application/json",
           authorization: `Bearer ${token}`,
@@ -302,7 +302,8 @@ function BeginDetail() {
                 <div className="mt-8">
 
                   <button
-                    onClick={() =>{dispatch(addToCart(item));navigate("/user/cart")} }
+                    onClick={() =>{dispatch(addToCart(item));
+                      navigate("/user/cart")} }
                     disabled={item.stock <= 0}
                     className="
                       w-full

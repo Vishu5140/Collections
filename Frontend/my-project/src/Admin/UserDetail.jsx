@@ -17,7 +17,7 @@ function UserDetail() {
       try {
         const [userRes, orderRes] = await Promise.all([
           axios.get(
-            `http://localhost:5000/auth/singleData/${id}`,
+            `https://collections-backend-qguh.onrender.com/auth/singleData/${id}`,
             {
               headers: {
                 "Content-Type": "application/json",
@@ -27,7 +27,7 @@ function UserDetail() {
           ),
 
           axios.get(
-            `http://localhost:5000/order/admin/getorders/${id}`,
+            `https://collections-backend-qguh.onrender.com/order/admin/getorders/${id}`,
             {
               headers: {
                 "Content-Type": "application/json",
