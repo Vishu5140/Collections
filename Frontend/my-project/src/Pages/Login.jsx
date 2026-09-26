@@ -447,7 +447,7 @@ function Login() {
                         </span>
                       </>
                     )}
-
+                     
                   </span>
 
                 </button>
@@ -461,8 +461,8 @@ function Login() {
 
                 <div className="h-px flex-1 bg-white/10" />
 
-                <span className="text-xs text-slate-600">
-                  SECURE LOGIN
+                <span className="text-xl text-slate-600 cursor-pointer" onClick={()=>navigate('/register')}>
+                  Resgitration
                 </span>
 
                 <div className="h-px flex-1 bg-white/10" />
