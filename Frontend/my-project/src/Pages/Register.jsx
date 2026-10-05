@@ -26,15 +26,10 @@ function Register() {
     try {
       setLoading(true);
 
-      const res = await axios.post(
+       await axios.post(
         "https://collections-backend-qguh.onrender.com/auth/register",
         formData
       );
-
-      console.log(res.data);
-
-      alert("Account created successfully!");
-
       navigate("/login");
     } catch (error) {
       console.log("Backend res", error.response);
