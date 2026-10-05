@@ -1,8 +1,6 @@
 import UserMod from "../Model/UserModel.js";
 import bcrypt from "bcrypt";
-import sendEmail from "../utils/sendEmail.js";
 import jwt from "jsonwebtoken";
-import router from "../Routes/authRoutes.js";
 const registerUser=async(req,res)=>{
    try{
     const{name,email,password}=req.body;
@@ -33,41 +31,40 @@ const registerUser=async(req,res)=>{
      password:hashpassword
    })
    await newUser.save();
-   // create msg for email
-   const subject="Welcome to Our Website! 🎉";
-  const message = `
-Hello ${name},
+//    // create msg for email
+//    const subject="Welcome to Our Website! 🎉";
+//   const message = `
+// Hello ${name},
 
-🎉 Welcome to Our Website!
+// 🎉 Welcome to Our Website!
 
-We’re excited to have you with us!
+// We’re excited to have you with us!
 
-Your account has been successfully created, and you can now start exploring everything our website has to offer.
+// Your account has been successfully created, and you can now start exploring everything our website has to offer.
 
-━━━━━━━━━━━━━━━━━━━━━━
+// ━━━━━━━━━━━━━━━━━━━━━━
 
-👤 Account Details
-Email: ${email}
+// 👤 Account Details
+// Email: ${email}
 
-━━━━━━━━━━━━━━━━━━━━━━
+// ━━━━━━━━━━━━━━━━━━━━━━
 
-Thank you for joining our community. We look forward to having you with us!
+// Thank you for joining our community. We look forward to having you with us!
 
-If you have any questions or need assistance, feel free to reach out to our support team.
+// If you have any questions or need assistance, feel free to reach out to our support team.
 
-Best regards,
-✨ The Our Website Team
+// Best regards,
+// ✨ The Our Website Team
 
-Thank you for choosing us! ❤️
-`;
-// send email
-const emailinfo=await sendEmail(email,subject,message);
+// Thank you for choosing us! ❤️
+// `;
+// // send email
+// const emailinfo=await sendEmail(email,subject,message);
 console.log("user registered")// remove after complete 
 res.status(200).json({
     Success:true,
     message:"user have registered",
-    user:newUser,
-    mailid:emailinfo.messageId
+    user:newUser
 })
    }catch(error)
    {
@@ -102,24 +99,24 @@ const loginUser=async(req,res)=>{
    const isMatch= await bcrypt.compare(password,userExist.password);
    // if password is incorrect and send email
    if (!isMatch) {
-    const subject = "Password Verification Failed";
+//     const subject = "Password Verification Failed";
 
-    const message = `
-Hello ,
+//     const message = `
+// Hello ,
 
-We noticed an unsuccessful login attempt on your account.
+// We noticed an unsuccessful login attempt on your account.
 
-The password entered during the login attempt was incorrect.
+// The password entered during the login attempt was incorrect.
 
-If this was you, you can simply try logging in again with the correct password.
+// If this was you, you can simply try logging in again with the correct password.
 
-If you did not attempt to log in, we recommend changing your password to keep your account secure.
+// If you did not attempt to log in, we recommend changing your password to keep your account secure.
 
-Best regards,
-🔐 The Our Website Security Team
-`;
+// Best regards,
+// 🔐 The Our Website Security Team
+// `;
 
-    await sendEmail(email, subject, message);
+//     await sendEmail(email, subject, message);
 
     return res.status(401).json({
         Success: false,

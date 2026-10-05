@@ -1,5 +1,5 @@
 import OrderMod from "../Model/OrderModel.js";
-import sendEmail from "../utils/sendEmail.js";
+
 const createOrder=async(req,res)=>{
   try{
      const { id, formData } = req.body;
@@ -39,20 +39,19 @@ const createOrder=async(req,res)=>{
       status: "shipped"
     });
     await NewOrder.save();
-    const message=`
-Hi ${fullName},
+//     const message=`
+// Hi ${fullName},
 
-Your order has been created successfully!
+// Your order has been created successfully!
 
-Best regards,
-The Our Website Team
-`;
-    const emailInfo=await sendEmail(req.user.email,'order created',message);
+// Best regards,
+// The Our Website Team
+// `;
+//     const emailInfo=await sendEmail(req.user.email,'order created',message);
     res.status(200).json({
         Success:true,
         message:"order created successfully",
         order:NewOrder,
-        mailid:emailInfo.messageId
     })
   }catch(error){
     res.status(500).json({"error in order creation":error.message})
